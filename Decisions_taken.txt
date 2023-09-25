@@ -1,0 +1,24 @@
+Decisions made throughout the journey of building this E-commerce cart system
+Product Class Hierarchy:
+Created an abstract Product class to represent products.
+Subclasses (Laptop and Headphones) inherit common attributes and implement discount calculation methods.
+
+Discount Strategy:
+Designed a discount strategy pattern with an abstract DiscountStrategy class.
+Implemented concrete discount strategies (PercentageDiscount and BuyOneGetOneFree) as subclasses.
+
+Cart Class:
+Developed a Cart class to manage items in the cart.
+Provided methods for adding, updating, and removing items from the cart.
+Calculated the total bill with optional discount strategy.
+Implemented a cloning method to create copies of the cart.
+
+User Interaction:
+Created a user interaction loop in the main function.
+Presented numerical options for actions (e.g., 1 for adding items).
+Handled user input and executed corresponding cart operations.
+
+Execution:
+Executed the main function when the script is run, initiating the user interaction.
+
+Throughout this journey, we emphasized code structure, reusability, and adherence to OOP principles and design patterns, resulting in a flexible and maintainable E-commerce cart system.

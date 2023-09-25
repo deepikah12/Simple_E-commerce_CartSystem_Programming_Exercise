@@ -1,0 +1,61 @@
+Code_Walkthrough
+class Product(ABC):
+    def __init__(self, name, price, available=True):
+        self.name = name
+        self.price = price
+        self.available = available
+
+    @abstractmethod
+    def calculate_discount(self, quantity):
+        pass
+
+    def clone(self):
+        return deepcopy(self)
+
+    def __str__(self):
+        return f"{self.name} - Price: ${self.price}{' (Out of stock)' if not self.available else ''}"
+
+class Laptop(Product):
+    def calculate_discount(self, quantity):
+        return 0  # No discount for laptops
+class Headphones(Product):
+    def calculate_discount(self, quantity):
+        return self.price * 0.1 if quantity >= 2 else 0
+class DiscountStrategy(ABC):
+    @abstractmethod
+    def apply_discount(self, product, quantity):
+        pass
+class PercentageDiscount(DiscountStrategy):
+    def __init__(self, percentage):
+        self.percentage = percentage
+
+    class BuyOneGetOneFree(DiscountStrategy):
+    def apply_discount(self, product, quantity):
+        return (quantity // 2) * product.price
+class Cart:
+    def __init__(self):
+        self.items = {}
+
+    def add_item(self, product, quantity):
+        # ...
+
+    def update_quantity(self, product_name, new_quantity):
+        # ...
+
+    def remove_item(self, product_name):
+        # ...
+
+    def calculate_total(self, discount_strategy=None):
+        # ...
+
+    def clone(self):
+        # ...
+
+    def __str__(self):
+        # ...
+def main():
+    # Initialization of products, cart, and user interaction
+    while True:
+        # Display available products and options
+Enter a command (add to cart/update quantity/remove from cart/check_bill/exit):        # Handling user's choice and interacting with the cart
+
